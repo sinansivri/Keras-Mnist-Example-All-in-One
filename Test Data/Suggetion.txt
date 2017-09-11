@@ -1,0 +1,2 @@
+A simpler way to use test images is copying these images to the same folder as python script.
+I'm a newb in Python, let me know if there is a better alternative.
