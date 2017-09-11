@@ -48,11 +48,11 @@ y_test = keras.utils.to_categorical(y_test, num_classes)
 
 model = Sequential()
 
-model.add(Conv2D(32, kernel_size=(3, 3),
+model.add(Conv2D(32, kernel_size=(3, 3),            # 1st Conv layer , 64 nodes , 3x3 kernel , image size 28x28 , relu activation
                  activation='relu',
                  input_shape=input_shape))
 
-model.add(Conv2D(64, (3, 3), activation='relu'))     # 1st Conv layer , 64 nodes , 3x3 kernel , image size 28x28 , relu activation
+model.add(Conv2D(64, (3, 3), activation='relu'))     # 2nd Conv layer , 64 nodes , 3x3 kernel , image size 28x28 , relu activation
 model.add(MaxPooling2D(pool_size=(2, 2)))            # Resampling Layer image size 14x14
 model.add(Dropout(0.25))                             # Generalization Layer randomly shuts down 0.25 of nodes
 
@@ -96,10 +96,6 @@ print('Saved trained model at %s ' % model_path) # Save example code model
 import numpy as np
 from PIL import Image
 
-#img=scipy.ndimage.imread("C:\\Users\\Lenovo\\Desktop\\mnist_evaluate\\76.png", flatten=True, mode=None)
-
-#im1=cv.LoadImage("C:\Users\Lenovo\Desktop\mnist_evaluate.jpg")
-#path=('C:\Users\Lenovo\Desktop\mnist_evaluate\76.png') .decode('unicode escape')
 
 img = Image.open( '2.png')
 grey=img.convert('L')
@@ -127,11 +123,11 @@ from PIL import Image
 model = load_model('keras_mnist_trained_model.h5')
     
 img = Image.open( '2D.jpg')
-grey=img.convert('L')
+grey=img.convert('L')                                           # Convert image to greyscale      
 grey.load()
 data = np.asarray( grey, dtype="float32" );
 
-data = np.reshape(data, (1, 28, 28, 1));
+data = np.reshape(data, (1, 28, 28, 1));                                             
 
 
 
@@ -146,6 +142,7 @@ print ("Class Probabilities \n ",a,"\n Prediction:",b)
 # In[2]:
 
 #Tensorboard trial
+#Currently i couldn't get TB to work with Keras. Here is the same example script with TB imports
 
 
 
