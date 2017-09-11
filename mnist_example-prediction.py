@@ -145,8 +145,6 @@ print ("Class Probabilities \n ",a,"\n Prediction:",b)
 #Currently i couldn't get TB to work with Keras. Here is the same example script with TB imports
 
 
-
-
 import keras
 from keras.datasets import mnist
 from keras.models import Sequential
@@ -232,10 +230,10 @@ if not os.path.isdir(save_dir):
 model_path = os.path.join(save_dir, model_name)
 model.save(model_path)
 
-print('Saved trained model at %s ' % model_path) # Save example code model
+print('Saved trained model at %s ' % model_path) 
 
 
-# In[ ]:
+
 
 
 
